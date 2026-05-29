@@ -1,38 +1,39 @@
-const quotes = {
-  liberty: "That to secure these rights, Governments are instituted among Men.",
-  equality: "We hold these truths to be self-evident, that all men are created equal.",
-  rights: "Life, Liberty and the pursuit of Happiness.",
-  government: "It is the Right of the People to alter or abolish it."
-};
-
 function beginSigning() {
 
   const name = document.getElementById("nameInput").value;
 
   if (!name) {
-    alert("Enter your name");
+    alert("Please enter your name.");
     return;
   }
 
   document.getElementById("signatureScene").classList.remove("hidden");
 
-  // show quill properly
+  // quill appears
   gsap.from("#quill", {
-    duration: 1.2,
+    duration: 1,
     opacity: 0,
-    x: -50
+    x: -40
   });
 
-  // write name cleanly ON LINE (no overlap)
+  // signature reveal
   const sig = document.getElementById("signature");
   sig.textContent = name;
 
   gsap.fromTo("#signature",
     { opacity: 0 },
-    { opacity: 1, duration: 2, delay: 0.8 }
+    { opacity: 1, duration: 1.5, delay: 0.5 }
   );
 }
 
 function showQuote(type) {
+
+  const quotes = {
+    liberty: "That to secure these rights, Governments are instituted among Men.",
+    equality: "We hold these truths to be self-evident, that all men are created equal.",
+    rights: "Life, Liberty and the pursuit of Happiness.",
+    government: "It is the Right of the People to alter or abolish it."
+  };
+
   document.getElementById("quoteBox").textContent = quotes[type];
 }
