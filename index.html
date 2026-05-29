@@ -12,53 +12,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
 
 <div class="container">
 
-  <div class="desk">
+  <div class="paper">
 
-    <div class="paper">
+    <h1>The Declaration of Independence</h1>
 
-      <h1>The Declaration of Independence</h1>
+    <p class="subtitle">Sign your name in affirmation of the founding principles</p>
 
-      <p class="subtitle">Add your name to the record of civic affirmation</p>
+    <!-- DECLARATION IMAGE -->
+    <div class="imageBox">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/United_States_Declaration_of_Independence.jpg"
+           class="declarationImage"/>
+    </div>
 
-      <!-- IMAGE (NO MORE SPLITTING / OPENING) -->
-      <div class="declarationBox">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/United_States_Declaration_of_Independence.jpg"
-             class="declarationImage" />
+    <!-- INPUT -->
+    <div class="inputSection">
+      <input id="nameInput" type="text" placeholder="Enter your full name"/>
+      <button onclick="beginSigning()">Sign the Declaration</button>
+    </div>
+
+    <!-- SIGNING AREA -->
+    <div id="signatureScene" class="hidden">
+
+      <div class="signaturePaper">
+
+        <!-- QUILL -->
+        <img class="quill" id="quill"
+             src="https://upload.wikimedia.org/wikipedia/commons/5/59/Quill_and_ink.svg"/>
+
+        <!-- SIGNATURE (NOW ABOVE LINE) -->
+        <div class="signature" id="signature"></div>
+
+        <!-- LINE (BELOW SIGNATURE) -->
+        <div class="signatureLine"></div>
+
       </div>
 
-      <!-- INPUT -->
-      <div class="inputSection">
-        <input id="nameInput" type="text" placeholder="Enter your full name"/>
-        <button onclick="beginSigning()">Sign the Declaration</button>
-      </div>
+      <!-- PRINCIPLES -->
+      <div class="principles">
 
-      <!-- SIGNING AREA -->
-      <div id="signatureScene" class="hidden">
+        <h2>Principles</h2>
 
-        <div class="signaturePaper">
-
-          <!-- QUILL (NOW VISIBLE) -->
-          <img class="quill" id="quill"
-               src="https://upload.wikimedia.org/wikipedia/commons/5/59/Quill_and_ink.svg" />
-
-          <!-- SIGN LINE -->
-          <div class="signatureLine"></div>
-
-          <!-- NAME -->
-          <div class="signature" id="signature"></div>
-
-        </div>
+        <button onclick="showQuote('liberty')">Liberty</button>
+        <button onclick="showQuote('equality')">Equality</button>
+        <button onclick="showQuote('rights')">Rights</button>
+        <button onclick="showQuote('government')">Government</button>
 
         <div class="quoteBox" id="quoteBox">
-          Select a principle below.
+          Select a principle above.
         </div>
 
       </div>
