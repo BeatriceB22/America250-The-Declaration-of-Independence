@@ -4,51 +4,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Declaration Signing</title>
+  <title>The Declaration of Independence</title>
 
   <link rel="stylesheet" href="style.css"/>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Elegant fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
   <div class="paper">
 
-    <h1>The Declaration of Independence</h1>
+    <!-- TITLE -->
+    <div class="title">The Declaration of Independence</div>
 
-    <p class="subtitle">Sign your name in affirmation of the founding principles</p>
-
-    <!-- DECLARATION IMAGE -->
-    <div class="imageBox">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/United_States_Declaration_of_Independence.jpg"
-           class="declarationImage"/>
+    <div class="subtitle">
+      Sign your name in affirmation of the founding principles
     </div>
 
+    <!-- DECLARATION IMAGE -->
+    <img class="declarationImage"
+         src="https://upload.wikimedia.org/wikipedia/commons/0/07/United_States_Declaration_of_Independence.jpg"/>
+
     <!-- INPUT -->
-    <div class="inputSection">
-      <input id="nameInput" type="text" placeholder="Enter your full name"/>
+    <div class="inputRow">
+      <input id="nameInput" placeholder="Enter your full name"/>
       <button onclick="beginSigning()">Sign the Declaration</button>
     </div>
 
     <!-- SIGNING AREA -->
     <div id="signatureScene" class="hidden">
 
-      <div class="signaturePaper">
+      <div class="signatureArea">
 
-        <!-- QUILL -->
         <img class="quill" id="quill"
-             src="https://upload.wikimedia.org/wikipedia/commons/5/59/Quill_and_ink.svg"/>
+             src="https://pngimg.com/d/quill_PNG49.png"/>
 
-        <!-- SIGNATURE (NOW ABOVE LINE) -->
         <div class="signature" id="signature"></div>
 
-        <!-- LINE (BELOW SIGNATURE) -->
         <div class="signatureLine"></div>
 
       </div>
@@ -56,15 +54,17 @@
       <!-- PRINCIPLES -->
       <div class="principles">
 
-        <h2>Principles</h2>
+        <div class="principlesTitle">Select a Principle to Reflect On</div>
 
-        <button onclick="showQuote('liberty')">Liberty</button>
-        <button onclick="showQuote('equality')">Equality</button>
-        <button onclick="showQuote('rights')">Rights</button>
-        <button onclick="showQuote('government')">Government</button>
+        <div class="buttons">
+          <button onclick="showQuote('liberty')">Liberty</button>
+          <button onclick="showQuote('equality')">Equality</button>
+          <button onclick="showQuote('rights')">Rights</button>
+          <button onclick="showQuote('government')">Government</button>
+        </div>
 
         <div class="quoteBox" id="quoteBox">
-          Select a principle above.
+          “Select a principle to reveal a passage from the Declaration of Independence.”
         </div>
 
       </div>
